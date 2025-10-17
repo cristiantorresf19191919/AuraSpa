@@ -56,9 +56,9 @@ export default function BeautifulCardDemo() {
                 </Typography>
 
                 {/* Demo Cards Grid */}
-                <Grid container spacing={4} maxWidth="1200px">
+                <Grid container spacing={4} sx={{ maxWidth: "1200px" }}>
                     {/* Blurred Card with Form */}
-                    <Grid item xs={12} md={6}>
+                    <Grid xs={12} md={6}>
                         <BeautifulCard isBlurred={true}>
                             <Typography variant="h4" sx={{ mb: 3, color: '#8B5CF6', fontWeight: 700 }}>
                                 ✨ Blurred Card
@@ -94,7 +94,7 @@ export default function BeautifulCardDemo() {
                     </Grid>
 
                     {/* Non-blurred Card */}
-                    <Grid item xs={12} md={6}>
+                    <Grid xs={12} md={6}>
                         <BeautifulCard isBlurred={false}>
                             <Typography variant="h4" sx={{ mb: 3, color: '#8B5CF6', fontWeight: 700 }}>
                                 🌟 Subtle Card
@@ -122,7 +122,7 @@ export default function BeautifulCardDemo() {
                     </Grid>
 
                     {/* Info Card */}
-                    <Grid item xs={12} md={6}>
+                    <Grid xs={12} md={6}>
                         <BeautifulCard isBlurred={true}>
                             <Typography variant="h4" sx={{ mb: 3, color: '#8B5CF6', fontWeight: 700 }}>
                                 📚 Information Card
@@ -149,7 +149,7 @@ export default function BeautifulCardDemo() {
                     </Grid>
 
                     {/* Custom Styled Card */}
-                    <Grid item xs={12} md={6}>
+                    <Grid xs={12} md={6}>
                         <BeautifulCard
                             isBlurred={true}
                             sx={{
