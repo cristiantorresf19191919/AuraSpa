@@ -1,6 +1,6 @@
-# Surgery Status App - Chingu Voyage Project
+# AURA Wellness Platform - Chingu Voyage Project
 
-A comprehensive Next.js skeleton app demonstrating modern web development practices including BEM methodology, SCSS preprocessing, Firebase authentication, and daisyUI components. Built for Chingu Voyage learning experience.
+A comprehensive Next.js wellness platform connecting clients with professional massage therapists and wellness services. Built with modern web development practices including BEM methodology, SCSS preprocessing, Firebase authentication, and Material UI components. Designed for Chingu Voyage learning experience.
 
 ## 🚀 Quick Start
 
@@ -26,7 +26,7 @@ V56-tier3-team-37/
 ├── .gitignore                 # Git ignore rules
 ├── .env.local.example         # Environment variables template
 ├── package.json               # Dependencies and scripts
-├── tailwind.config.js         # Tailwind CSS + daisyUI configuration
+├── tailwind.config.js         # Tailwind CSS configuration
 ├── tsconfig.json              # TypeScript configuration
 ├── next.config.ts             # Next.js configuration
 ├── README.md                  # This file
@@ -34,137 +34,126 @@ V56-tier3-team-37/
 └── src/
     ├── app/                   # Next.js App Router pages
     │   ├── layout.tsx         # Root layout with AuthProvider
-    │   ├── page.tsx           # Home page (/)
+    │   ├── page.tsx           # Home page with service discovery (/)
     │   ├── globals.scss       # BEM + SCSS styles
     │   ├── auth/
     │   │   └── page.tsx       # Authentication page (/auth)
-    │   ├── patients/
-    │   │   └── page.tsx       # Patient list page (/patients)
-    │   ├── add-patient/
-    │   │   └── page.tsx       # Add patient form (/add-patient)
+    │   ├── onboarding/
+    │   │   └── page.tsx       # Partner onboarding flow (/onboarding)
+    │   ├── dashboard/
+    │   │   └── page.tsx       # Partner dashboard (/dashboard)
+    │   ├── services/
+    │   │   └── page.tsx       # Service catalog (/services)
+    │   ├── book-appointment/
+    │   │   └── page.tsx       # Booking flow (/book-appointment)
+    │   ├── manage-services/
+    │   │   └── page.tsx       # Service management (/manage-services)
     │   └── chatbot-demo/
-    │       └── page.tsx       # Chatbot privacy demo page (/chatbot-demo)
+    │       └── page.tsx       # AI assistant demo (/chatbot-demo)
     ├── components/            # Reusable UI components
     │   ├── Header.tsx         # Navigation header (BEM)
-    │   ├── MobileHeader.tsx   # Mobile navigation with animated hamburger
+    │   ├── MobileMenu.tsx     # Mobile navigation with animated hamburger
     │   ├── Footer.tsx         # Footer component (BEM)
-    │   ├── SurgeryTypeAutocomplete.tsx # Standardized surgery types autocomplete
-    │   └── BrandButton.tsx    # Custom branded button component
+    │   ├── BeautifulCard.tsx  # Glassmorphism card component
+    │   ├── BrandButton.tsx    # Custom branded button component
+    │   ├── BrandLoader.tsx    # Branded loading component
+    │   ├── OnboardingStepper.tsx # Multi-step onboarding flow
+    │   └── FloatingChat.tsx   # AI assistant chat widget
     └── lib/                   # Utility libraries
-        ├── firebase.ts        # Firebase configuration (commented)
-        ├── auth-context.tsx   # Authentication context (mock)
-        ├── surgery-types.ts   # Standardized surgery types and utilities
-        └── patient-service.ts # Patient data management service
+        ├── firebase.ts        # Firebase configuration
+        ├── auth-context.tsx   # Authentication context
+        ├── massage-types.ts   # Standardized massage service types
+        ├── partner-service.ts # Partner data management
+        ├── appointment-service.ts # Booking and appointment management
+        └── language-context.tsx # Multi-language support
 ```
 
-## 🔒 Enhanced AI Chatbot with Privacy Controls
+## 🤖 AI Wellness Assistant
 
 ### Overview
-The Care Flow AI chatbot now features advanced privacy controls and role-based access management to protect patient information while maintaining helpful functionality.
+The AURA AI assistant provides intelligent support for both clients and wellness partners, offering personalized recommendations, booking assistance, and wellness guidance.
 
-### Privacy Features
-- **Role-Based Access Control**: Different search capabilities based on user roles
-- **Patient Code Protection**: Patient codes work like passwords for secure access
-- **Name Search Restrictions**: Only administrators can search by patient names
-- **Anonymous Responses**: AI never reveals patient names, only patient codes
-- **Secure Communication**: All patient information is shared using code references
-- **Personalized Experience**: Role-based greetings for enhanced user experience
-- **Status Page Integration**: Patient codes displayed for admin/surgical team users
+### Features
+- **Service Discovery**: AI helps clients find the perfect massage or wellness service
+- **Booking Assistance**: Intelligent scheduling recommendations based on availability
+- **Partner Support**: AI assists wellness professionals with client management
+- **Wellness Guidance**: Provides tips and recommendations for optimal wellness
+- **Multi-language Support**: Available in English and Spanish
+- **Role-Based Responses**: Tailored assistance based on user type (client vs partner)
 
-### User Role Capabilities
+### User Experience
 
-#### 🔑 Administrators
-- ✅ Can search patients by name OR patient code
-- ✅ Full access to patient lookup features
-- ✅ Can see patient names in responses for convenience
-- 🔓 Administrative privileges for efficient workflow
-- 👋 Personalized greeting: "Hello Admin!"
+#### 👤 Clients
+- ✅ Get personalized service recommendations
+- ✅ Receive booking assistance and scheduling help
+- ✅ Access wellness tips and guidance
+- ✅ Find nearby wellness professionals
+- 👋 Greeting: "Hello! I'm your AI wellness assistant..."
 
-#### 👥 Surgical Team
-- ❌ Cannot search patients by name
-- ✅ Can search patients by code only
-- 🔒 Limited access: names and codes only (no surgery details)
-- 🔄 Can update patient status
-- 👋 Personalized greeting: "Hello Surgical Team!"
-
-#### 👤 Guests
-- ❌ Cannot search patients by name
-- ✅ Can search patients by code only
-- 🔒 Restricted access for privacy
-- 🔐 Patient codes work like passwords
-- 👋 Standard greeting: "Hello! I'm your AI assistant..."
+#### 🤝 Partners
+- ✅ Manage client bookings and appointments
+- ✅ Get business insights and recommendations
+- ✅ Access client communication tools
+- ✅ Receive marketing and growth tips
+- 👋 Greeting: "Hello Partner! I'm your AI business assistant..."
 
 ### How It Works
-1. **Patient Code System**: Each patient gets a unique 6-character alphanumeric code (e.g., ABC123)
-2. **Privacy-First Responses**: AI responds with "Patient ABC123 is in recovery" instead of "John Smith is in recovery"
-3. **Role Enforcement**: System automatically restricts search capabilities based on user authentication
-4. **Secure Access**: Only those with the patient code can access information
-
-### Example Scenarios
-- **Admin**: "How is John Smith?" → Searches by name, responds with "John Smith is currently in recovery"
-- **Guest**: "How is John Smith?" → Blocked, explains code-only requirement
-- **Any User**: "Check ABC123" → Searches by code, responds with "Patient ABC123 is..." (guests) or "John Smith is currently in recovery" (admins)
-
-### Personalized Greetings
-- **Administrator**: "Hello Admin! I'm your AI assistant..."
-- **Surgical Team**: "Hello Surgical Team! I'm your AI assistant..."
-- **Guest**: "Hello! I'm your AI assistant..." (standard greeting)
+1. **Intelligent Matching**: AI analyzes client preferences and matches them with suitable services
+2. **Availability Checking**: Real-time availability checking for optimal booking times
+3. **Personalized Recommendations**: Based on client history and preferences
+4. **Business Intelligence**: Partners receive insights on client patterns and preferences
 
 ### Demo Page
-Visit `/chatbot-demo` to test the enhanced privacy features in real-time with different user roles.
-
-### Patient Status Page
-Visit `/status` to see role-based patient information display:
-- **Administrators**: See patient names, codes, surgery details, and helpful chatbot integration tips
-- **Surgical Team**: See patient names and codes only (for status updates)
-- **Guests**: See only patient codes and status for privacy protection
+Visit `/chatbot-demo` to experience the AI assistant with different user roles and scenarios.
 
 ---
 
-## 🏥 Standardized Surgery Types
+## 💆‍♀️ Standardized Wellness Services
 
 ### Overview
-This application implements a comprehensive standardized surgery types system to ensure data consistency, eliminate errors, and improve patient safety.
+This application implements a comprehensive standardized wellness services system to ensure service consistency, improve client experience, and help partners maximize their earnings.
 
 ### Features
-- **60+ Standardized Procedures**: Comprehensive coverage across all major surgical specialties
-- **Smart Icon System**: Category-level icons with subtle procedure indicators for clean UX
+- **15+ Massage Categories**: Comprehensive coverage across all major massage and wellness specialties
+- **Smart Icon System**: Category-level icons with service indicators for clean UX
 - **Autocomplete Functionality**: Real-time search with category grouping and descriptions
-- **Category Organization**: Logical grouping by medical specialty (Cardiac, Neurosurgery, Orthopedics, etc.)
-- **Common Aliases**: Includes alternative names and abbreviations for each procedure
-- **Validation**: Ensures only valid surgery types are entered into the system
+- **Category Organization**: Logical grouping by wellness specialty (Relaxation, Therapeutic, Sports, etc.)
+- **Service Descriptions**: Detailed descriptions for each service type
+- **Pricing Integration**: Built-in pricing structure for partner earnings
 
-### Available Categories
-- **🫀 Cardiac & Cardiovascular**: CABG, Heart Valve Replacement, Angioplasty, Pacemaker Implantation
-- **🧠 Neurosurgery**: Craniotomy, Spinal Fusion, Laminectomy, Deep Brain Stimulation
-- **👁️ Ophthalmology**: Cataract Extraction, LASIK, Retinal Detachment Repair, Glaucoma Surgery
-- **🩺 General Surgery**: Appendectomy, Hernia Repair, Cholecystectomy, Gastrectomy, Colectomy
-- **🦴 Orthopedic Surgery**: Hip/Knee Replacement, Arthroscopy, Shoulder Surgery, Ankle Fusion
-- **🫁 Thoracic Surgery**: Lobectomy, Pneumonectomy, Mediastinoscopy, Esophagectomy
-- **🧍‍♂️ Urology**: Prostatectomy, Nephrectomy, Cystectomy, Ureteroscopy
-- **🫄 Obstetrics & Gynecology**: C-Section, Hysterectomy, Tubal Ligation, Myomectomy
-- **🧵 Plastic & Reconstructive**: Breast Reconstruction, Skin Grafts, Rhinoplasty, Blepharoplasty
-- **🩸 Vascular Surgery**: Carotid Endarterectomy, Peripheral Bypass, Varicose Vein Surgery
-- **👂 ENT Surgery**: Tonsillectomy, Adenoidectomy, Tympanoplasty, Septoplasty
-- **👶 Pediatric Surgery**: Circumcision, Inguinal Hernia Repair, Pyloromyotomy
-- **🔄 Transplant Surgery**: Kidney, Liver, Heart, and Lung Transplants
-- **🚨 Emergency Surgery**: Exploratory Laparotomy, Thoracotomy, Emergency Craniotomy
+### Available Service Categories
+- **💆‍♀️ Swedish Massage**: Classic relaxation massage with long, flowing strokes
+- **💪 Deep Tissue**: Targeted pressure to release chronic muscle tension
+- **🏃‍♂️ Sports Massage**: Pre/post workout massage for athletes
+- **🔥 Hot Stone Therapy**: Heated stones for deep muscle relaxation
+- **🌸 Aromatherapy**: Essential oils combined with massage techniques
+- **🦶 Reflexology**: Foot and hand pressure point therapy
+- **🙏 Thai Massage**: Traditional stretching and compression techniques
+- **👐 Shiatsu**: Japanese pressure point massage
+- **💕 Couples Massage**: Side-by-side massage for partners
+- **🤱 Prenatal Massage**: Specialized massage for expecting mothers
+- **🏥 Therapeutic Massage**: Medical-grade massage for injury recovery
+- **😌 Relaxation Massage**: Gentle, stress-relief focused massage
+- **✂️ Barberia Services**: Hair and grooming services
+- **🦶 Reflexología**: Traditional foot reflexology therapy
+- **🔥 Piedras Calientes**: Hot stone therapy in Spanish
 
 ### Implementation
-The autocomplete component is integrated into:
-- Edit Patient forms (`/edit-patient/[id]`)
-- Inline editing in Patients list (`/patients`)
-- Demo page (`/surgery-types-demo`)
+The service selection is integrated into:
+- Partner onboarding flow (`/onboarding`)
+- Service management (`/manage-services`)
+- Booking system (`/book-appointment`)
+- Service catalog (`/services`)
 
 ### Benefits
-✅ **Eliminates Errors**: No more typos or misspellings in medical terms  
-✅ **Ensures Consistency**: Standardized terminology across the organization  
-✅ **Improves Data Quality**: Better reporting and analytics capabilities  
-✅ **Saves Time**: Reduces manual typing with intelligent search  
-✅ **Enhances Safety**: Clear, unambiguous procedure names  
+✅ **Eliminates Confusion**: Clear, standardized service descriptions  
+✅ **Ensures Consistency**: Uniform service offerings across all partners  
+✅ **Improves Client Experience**: Better service matching and expectations  
+✅ **Saves Time**: Reduces manual service setup with intelligent selection  
+✅ **Enhances Safety**: Clear service boundaries and contraindications  
 ✅ **Clean UX Design**: Category-level icons prevent visual clutter  
-✅ **Professional Appearance**: Medical-grade interface following UX best practices  
-✅ **Sophisticated Animations**: Intelligent robot animations for engagement  
+✅ **Professional Appearance**: Wellness-grade interface following UX best practices  
+✅ **Maximizes Earnings**: Optimized service categories for partner revenue  
 
 ## 🎨 Material UI Theme & BEM Methodology
 
@@ -172,10 +161,12 @@ The autocomplete component is integrated into:
 
 This project includes a comprehensive Material UI theme using a custom teal color palette:
 
-#### **Teal Color Palette**
+#### **Wellness Color Palette**
 ```typescript
-const tealPalette = {
-  teal: '#07BEB8',           // Primary teal
+const wellnessPalette = {
+  primary: '#8B5CF6',        // Primary purple (brand color)
+  secondary: '#EC4899',      // Secondary pink (accent color)
+  teal: '#07BEB8',           // Wellness teal
   mediumTeal: '#3DCCC7',     // Medium teal
   lightAqua: '#68d8D6',      // Light aqua
   lightBlue: '#9CEAEF',      // Light blue
@@ -185,23 +176,24 @@ const tealPalette = {
 ```
 
 #### **Theme Features**
-- **Custom Color Palette**: Teal-based theme with complementary colors
+- **Custom Color Palette**: Wellness-focused theme with purple/pink/teal colors
 - **Typography**: Roboto font integration with proper font weights
-- **Component Customization**: Buttons, cards, forms, and more styled with teal theme
+- **Component Customization**: Buttons, cards, forms, and more styled with wellness theme
 - **Responsive Design**: Mobile-first approach with proper breakpoints
 - **Accessibility**: High contrast ratios and proper color usage
+- **Glassmorphism Effects**: Modern frosted glass styling for premium feel
 
 #### **Theme Demo**
-Visit `/theme-demo` to see all Material UI components styled with the custom theme.
+Visit `/theme-demo` to see all Material UI components styled with the custom wellness theme.
 
 #### **Using Material UI Components**
 ```tsx
 import { Button, Card, Typography } from '@mui/material';
 
-// Components automatically use the teal theme
-<Button variant="contained">Primary Button</Button>
-<Card>Styled Card</Card>
-<Typography variant="h4">Styled Typography</Typography>
+// Components automatically use the wellness theme
+<Button variant="contained">Book Service</Button>
+<Card>Service Card</Card>
+<Typography variant="h4">Wellness Services</Typography>
 ```
 
 ### BEM Methodology & SCSS Implementation
@@ -243,34 +235,50 @@ $spacing-lg: 1.5rem;
 
 #### **Component Examples**
 
-**Header Component:**
+**Service Card Component:**
 ```scss
-.header {
-  background: var(--color-primary);
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
   
   &__container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
   }
   
-  &__navbar {
+  &__header {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
   }
   
-  &__nav-item {
+  &__icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  &__title {
     color: white;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+    font-weight: 600;
+  }
+  
+  &__description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+  
+  &--featured {
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
   }
 }
 ```
 
-**Form Components:**
+**Booking Form Components:**
 ```scss
-.form {
+.booking-form {
   &__group {
     margin-bottom: $spacing-lg;
   }
@@ -278,10 +286,14 @@ $spacing-lg: 1.5rem;
   &__input {
     width: 100%;
     padding: $spacing-sm $spacing-md;
-    border: 1px solid #d1d5db;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
     
     &:focus {
       border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
     }
     
     &--error {
@@ -290,9 +302,12 @@ $spacing-lg: 1.5rem;
   }
   
   &__button {
-    &--primary {
-      background: var(--color-primary);
-    }
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    color: white;
+    font-weight: 600;
     
     &--loading {
       position: relative;
@@ -310,16 +325,17 @@ $spacing-lg: 1.5rem;
 ### Key SCSS Features Used
 
 - **Variables**: Colors, spacing, typography, breakpoints
-- **Mixins**: Responsive design, flexbox utilities, shadows
+- **Mixins**: Responsive design, flexbox utilities, shadows, glassmorphism effects
 - **Nesting**: BEM structure with SCSS nesting
 - **Extends**: Shared styles between components
 - **Functions**: Color manipulation (darken, rgba)
 - **Media Queries**: Responsive breakpoints
-- **Animations**: Loading spinners and transitions
+- **Animations**: Loading spinners, transitions, and micro-interactions
+- **Glassmorphism**: Backdrop filters and transparency effects
 
-## 📱 Mobile Header Component
+## 📱 Mobile Navigation Component
 
-The project includes a dedicated `MobileHeader` component that provides an enhanced mobile navigation experience with smooth animations and modern UI patterns.
+The project includes a dedicated `MobileMenu` component that provides an enhanced mobile navigation experience with smooth animations and modern UI patterns.
 
 ### Features
 
@@ -328,6 +344,7 @@ The project includes a dedicated `MobileHeader` component that provides an enhan
 - **Role-Based Navigation**: Dynamic menu items based on user authentication and role
 - **Smooth Animations**: Staggered entrance animations for menu items using Framer Motion
 - **Responsive Design**: Automatically hidden on desktop (md: breakpoint and above)
+- **Wellness-Focused Navigation**: Service discovery, booking, and partner tools
 
 ### Animation Details
 
@@ -357,28 +374,29 @@ animate={{ clipPath: `ellipse(100vw 100vh at ${origin.x}px ${origin.y}px)` }}
 
 ### Usage
 
-The `MobileHeader` is automatically included in the root layout and works alongside the desktop `Header`:
+The `MobileMenu` is automatically included in the root layout and works alongside the desktop `Header`:
 
 ```tsx
 // In layout.tsx
 <Header />        // Desktop header (hidden on mobile)
-<MobileHeader />  // Mobile header (hidden on desktop)
+<MobileMenu />    // Mobile menu (hidden on desktop)
 ```
 
 ### Navigation Items
 
 The mobile menu dynamically shows navigation items based on user authentication and role:
 
-- **Unauthenticated**: Login link, Care Flow, Patient Status
-- **Surgical Team**: All above + Update Patient Status
-- **Administrator**: All above + Patient Information (Add/Edit patients)
+- **Unauthenticated**: Login link, Services, Book Appointment
+- **Clients**: All above + My Appointments, Dashboard
+- **Partners**: All above + Manage Services, Partner Dashboard, Onboarding
 
 ### Styling
 
-- Uses the same teal color scheme (`#07BEB8`) as the desktop header
+- Uses the wellness color scheme (`#8B5CF6`, `#EC4899`) as the desktop header
 - Material-UI icons for consistent visual language
 - Tailwind CSS for responsive utilities and animations
 - Framer Motion for smooth, performant animations
+- Glassmorphism effects for modern premium feel
 
 ## 🛠️ Dependencies
 
@@ -582,22 +600,21 @@ useEffect(() => {
 - Responsive design
 - Form validation
 
-### Patient Status Workflow
-- **Checked In**: Default status when patient information is recorded
-- **Pre-Procedure**: Patient is prepared for surgery
-- **In Progress**: Surgery is currently being performed
-- **Closing**: Surgery is being completed
-- **Recovery**: Patient is in post-operative recovery
-- **Complete**: Surgery and recovery are finished
-- **Dismissal**: Patient is discharged from care
+### Booking Status Workflow
+- **Pending**: Appointment request submitted, awaiting confirmation
+- **Confirmed**: Appointment confirmed by partner
+- **In Progress**: Service session is currently active
+- **Completed**: Service session finished successfully
+- **Cancelled**: Appointment cancelled by client or partner
+- **No Show**: Client didn't arrive for scheduled appointment
 
 ## 📱 Pages Overview
 
 ### 1. **Home Page** (`/`)
-- **Purpose**: App overview and navigation guide
-- **Features**: Hero section, feature cards, quick start guide
+- **Purpose**: Service discovery and platform overview
+- **Features**: Video background, service categories, search functionality, glassmorphism cards
 - **Access**: Public (no authentication required)
-- **BEM Classes**: `.hero`, `.card`, `.form__button`
+- **BEM Classes**: `.hero`, `.service-card`, `.search-form`
 
 ### 2. **Authentication Page** (`/auth`)
 - **Purpose**: User login and signup
@@ -605,17 +622,35 @@ useEffect(() => {
 - **Access**: Public
 - **BEM Classes**: `.form`, `.alert`, `.card--form`
 
-### 3. **Patients Page** (`/patients`)
-- **Purpose**: Display patient list
-- **Features**: Table view, demo data, add patient button
-- **Access**: Protected (requires authentication)
-- **BEM Classes**: `.table`, `.badge`, `.alert`
+### 3. **Onboarding Page** (`/onboarding`)
+- **Purpose**: Partner registration and profile setup
+- **Features**: Multi-step form, service selection, pricing setup, availability configuration
+- **Access**: Public (for new partners)
+- **BEM Classes**: `.onboarding-form`, `.stepper`, `.service-selection`
 
-### 4. **Add Patient Page** (`/add-patient`)
-- **Purpose**: Add new patient form
-- **Features**: Form validation, controlled inputs, success messages
-- **Access**: Protected (requires authentication)
-- **BEM Classes**: `.form`, `.grid`, `.card--form`
+### 4. **Services Page** (`/services`)
+- **Purpose**: Browse available wellness services
+- **Features**: Service catalog, filtering, search, partner profiles
+- **Access**: Public
+- **BEM Classes**: `.service-grid`, `.filter-panel`, `.service-card`
+
+### 5. **Book Appointment Page** (`/book-appointment`)
+- **Purpose**: Schedule wellness sessions
+- **Features**: Date/time selection, service booking, payment integration
+- **Access**: Public (requires authentication for booking)
+- **BEM Classes**: `.booking-form`, `.calendar`, `.time-slots`
+
+### 6. **Dashboard Page** (`/dashboard`)
+- **Purpose**: Partner business management
+- **Features**: Appointment management, earnings overview, client communication
+- **Access**: Protected (partners only)
+- **BEM Classes**: `.dashboard-grid`, `.stats-card`, `.appointment-list`
+
+### 7. **Manage Services Page** (`/manage-services`)
+- **Purpose**: Partner service management
+- **Features**: Add/edit services, pricing management, availability settings
+- **Access**: Protected (partners only)
+- **BEM Classes**: `.service-form`, `.pricing-grid`, `.availability-calendar`
 
 ## 🔧 Development Scripts
 
@@ -689,7 +724,9 @@ This project was built as part of Chingu Voyage, a collaborative learning experi
 - Demonstrate modern React/Next.js development practices
 - Implement BEM methodology with SCSS preprocessing
 - Show Firebase authentication integration
-- Create a scalable and maintainable codebase
+- Create a scalable wellness platform for service booking
+- Enable partners to earn money through therapeutic services
 - Provide learning resources for fellow developers
+- Showcase glassmorphism and modern UI/UX design patterns
 
 
