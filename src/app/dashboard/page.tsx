@@ -299,7 +299,7 @@ export default function DashboardPage() {
 
         {/* Quick Stats */}
         <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Card sx={{ borderRadius: 3, textAlign: 'center' }}>
               <CardContent>
                 <CalendarIcon sx={{ fontSize: 40, color: 'primary.main', mb: 1 }} />
@@ -313,7 +313,7 @@ export default function DashboardPage() {
             </Card>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Card sx={{ borderRadius: 3, textAlign: 'center' }}>
               <CardContent>
                 <HistoryIcon sx={{ fontSize: 40, color: 'secondary.main', mb: 1 }} />
@@ -329,7 +329,7 @@ export default function DashboardPage() {
 
           {userRole === UserRole.MASSAGE_PROVIDER && (
             <>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                 <Card sx={{ borderRadius: 3, textAlign: 'center' }}>
                   <CardContent>
                     <SpaIcon sx={{ fontSize: 40, color: 'success.main', mb: 1 }} />
@@ -343,7 +343,7 @@ export default function DashboardPage() {
                 </Card>
               </Grid>
 
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                 <Card sx={{ borderRadius: 3, textAlign: 'center' }}>
                   <CardContent>
                     <CheckCircleIcon sx={{ fontSize: 40, color: 'info.main', mb: 1 }} />
@@ -665,7 +665,7 @@ export default function DashboardPage() {
               ) : (
                 <Grid container spacing={3}>
                   {services.map((service, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={service.id}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={service.id}>
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -760,7 +760,7 @@ export default function DashboardPage() {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     label={t('service.name')}
@@ -770,7 +770,7 @@ export default function DashboardPage() {
                   />
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     label={t('description')}
@@ -782,7 +782,7 @@ export default function DashboardPage() {
                   />
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <FormControl fullWidth required>
                     <InputLabel>{t('category')}</InputLabel>
                     <Select
@@ -817,7 +817,7 @@ export default function DashboardPage() {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     fullWidth
                     label={t('duration.minutes')}
@@ -828,7 +828,7 @@ export default function DashboardPage() {
                   />
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     fullWidth
                     label={t('price')}
@@ -854,7 +854,7 @@ export default function DashboardPage() {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <FormControlLabel
                     control={
                       <Switch
@@ -866,7 +866,7 @@ export default function DashboardPage() {
                   />
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
                     {t('upload.image')}
                   </Typography>

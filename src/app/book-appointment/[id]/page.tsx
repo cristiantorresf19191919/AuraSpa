@@ -36,7 +36,7 @@ import {
 } from '@mui/icons-material';
 import { massageServiceManager } from '@/lib/massage-service';
 import { appointmentService, CreateAppointmentData } from '@/lib/appointment-service';
-import { MassageService } from '@/lib/massage-types';
+import { MassageService, MASSAGE_CATEGORIES } from '@/lib/massage-types';
 import { TimeSlot, generateTimeSlots } from '@/lib/appointment-types';
 import { UserRole } from '@/lib/user-roles';
 import RoleGuard from '@/components/RoleGuard';
@@ -232,7 +232,7 @@ export default function BookAppointmentPage() {
                     <Card sx={{ mb: 4, borderRadius: 3 }}>
                         <CardContent sx={{ p: 3 }}>
                             <Grid container spacing={3} alignItems="center">
-                                <Grid item xs={12} md={8}>
+                                <Grid size={{ xs: 12, md: 8 }}>
                                     <Typography variant="h5" component="h2" sx={{ fontWeight: 600, mb: 1 }}>
                                         {service.name}
                                     </Typography>
@@ -252,7 +252,7 @@ export default function BookAppointmentPage() {
                                         />
                                     </Box>
                                 </Grid>
-                                <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
+                                <Grid size={{ xs: 12, md: 4 }} sx={{ textAlign: 'center' }}>
                                     <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>
                                         ${service.price}
                                     </Typography>
@@ -292,7 +292,7 @@ export default function BookAppointmentPage() {
                                 </Typography>
 
                                 <Grid container spacing={3}>
-                                    <Grid item xs={12} md={6}>
+                                    <Grid size={{ xs: 12, md: 6 }}>
                                         <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
                                             Choose Date
                                         </Typography>
@@ -311,7 +311,7 @@ export default function BookAppointmentPage() {
                                         </Box>
                                     </Grid>
 
-                                    <Grid item xs={12} md={6}>
+                                    <Grid size={{ xs: 12, md: 6 }}>
                                         <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
                                             Choose Time
                                         </Typography>
@@ -336,7 +336,7 @@ export default function BookAppointmentPage() {
                                         )}
                                     </Grid>
 
-                                    <Grid item xs={12}>
+                                    <Grid size={{ xs: 12 }}>
                                         <TextField
                                             fullWidth
                                             label="Special Requests or Notes (optional)"
@@ -364,15 +364,15 @@ export default function BookAppointmentPage() {
 
                                 <Card variant="outlined" sx={{ p: 3, mb: 3 }}>
                                     <Grid container spacing={2}>
-                                        <Grid item xs={6}>
+                                        <Grid size={{ xs: 6 }}>
                                             <Typography variant="body2" color="text.secondary">Service:</Typography>
                                             <Typography variant="body1" sx={{ fontWeight: 600 }}>{service.name}</Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid size={{ xs: 6 }}>
                                             <Typography variant="body2" color="text.secondary">Duration:</Typography>
                                             <Typography variant="body1" sx={{ fontWeight: 600 }}>{service.duration} minutes</Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid size={{ xs: 6 }}>
                                             <Typography variant="body2" color="text.secondary">Date:</Typography>
                                             <Typography variant="body1" sx={{ fontWeight: 600 }}>
                                                 {selectedDate?.toLocaleDateString('en-US', {
@@ -383,18 +383,18 @@ export default function BookAppointmentPage() {
                                                 })}
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid size={{ xs: 6 }}>
                                             <Typography variant="body2" color="text.secondary">Time:</Typography>
                                             <Typography variant="body1" sx={{ fontWeight: 600 }}>{selectedTime}</Typography>
                                         </Grid>
-                                        <Grid item xs={12}>
+                                        <Grid size={{ xs: 12 }}>
                                             <Typography variant="body2" color="text.secondary">Total Price:</Typography>
                                             <Typography variant="h6" color="primary" sx={{ fontWeight: 700 }}>
                                                 ${service.price}
                                             </Typography>
                                         </Grid>
                                         {customerNotes && (
-                                            <Grid item xs={12}>
+                                            <Grid size={{ xs: 12 }}>
                                                 <Typography variant="body2" color="text.secondary">Notes:</Typography>
                                                 <Typography variant="body1">{customerNotes}</Typography>
                                             </Grid>

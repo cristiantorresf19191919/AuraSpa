@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.scss";
+import { Auth0Provider } from '@auth0/nextjs-auth0';
 import { AuthProvider } from "@/lib/auth-context";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { LanguageProvider } from "@/lib/language-context";
@@ -41,22 +42,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`}
       >
-        <ThemeProvider>
-          <LanguageProvider>
-            <AuthProvider>
-              <ClientWrapper>
-                <div className="min-h-screen flex flex-col">
-                  <Header />
-                  <main className="flex-1 main-background">
-                    {children}
-                  </main>
-                  <FloatingChat />
-                  <Footer />
-                </div>
-              </ClientWrapper>
-            </AuthProvider>
-          </LanguageProvider>
-        </ThemeProvider>
+        <Auth0Provider>
+          <ThemeProvider>
+            <LanguageProvider>
+              <AuthProvider>
+                <ClientWrapper>
+                  <div className="min-h-screen flex flex-col">
+                    <Header />
+                    <main className="flex-1 main-background">
+                      {children}
+                    </main>
+                    <FloatingChat />
+                    <Footer />
+                  </div>
+                </ClientWrapper>
+              </AuthProvider>
+            </LanguageProvider>
+          </ThemeProvider>
+        </Auth0Provider>
       </body>
     </html>
   );

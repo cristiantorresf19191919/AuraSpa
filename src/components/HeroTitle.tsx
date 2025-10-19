@@ -70,7 +70,6 @@ export default function HeroTitle({
     return (
         <Typography
             variant={variant}
-            component={component}
             className={`hero-title ${className}`}
             data-testid={testId}
             sx={{

@@ -42,8 +42,8 @@ export default function ChatbotDemoPage() {
         switch (userRole) {
             case UserRole.ADMIN:
                 return 'Administrator - Can search by patient names or codes';
-            case UserRole.SURGICAL_TEAM:
-                return 'Surgical Team - Can only search by patient codes';
+            case UserRole.MASSAGE_PROVIDER:
+                return 'Massage Provider - Can only search by patient codes';
             case UserRole.GUEST:
                 return 'Guest - Can only search by patient codes';
             default:

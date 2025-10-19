@@ -362,7 +362,7 @@ function PatientsPageContent() {
   }
 
   return (
-    <RoleGuard requiredRole={UserRole.SURGICAL_TEAM}>
+    <RoleGuard requiredRole={UserRole.MASSAGE_PROVIDER}>
       <Box sx={{
         p: 4,
         minHeight: '100vh'

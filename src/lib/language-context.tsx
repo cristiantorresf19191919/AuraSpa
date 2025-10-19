@@ -7,7 +7,7 @@ export type Language = 'en' | 'es';
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (key: string) => string;
+    t: (key: string, params?: Record<string, string>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -93,7 +93,6 @@ const translations = {
         'description': 'Description',
         'duration.minutes': 'Duration (minutes)',
         'price': 'Price ($)',
-        'category': 'Category',
         'image.url.optional': 'Image URL (optional)',
         'service.active.visible': 'Service is active and visible to customers',
         'cancel': 'Cancel',
@@ -221,7 +220,6 @@ const translations = {
         'yes': 'Yes',
         'no': 'No',
         'confirm': 'Confirm',
-        'cancel': 'Cancel',
         'are.you.sure': 'Are you sure?',
         'failed.to.load': 'Failed to load',
         'no.data': 'No data available',
@@ -284,12 +282,10 @@ const translations = {
         'no.upcoming.appointments': 'No hay próximas citas',
         'ready.to.relax': '¿Listo para relajarte? Reserva tu próxima sesión.',
         'no.upcoming.scheduled': 'No hay próximas citas programadas.',
-        'browse.services': 'Explorar Servicios',
         'no.past.appointments': 'No hay citas pasadas',
         'no.services.yet': 'Aún no hay servicios',
         'start.adding.service': 'Comienza agregando tu primer servicio para atraer clientes',
         'add.first.service': 'Agregar Tu Primer Servicio',
-        'manage.services': 'Gestionar Servicios',
         'post.new.service': 'Publicar Nuevo Servicio',
         'service.dashboard': 'Panel de Servicios',
         'quick.actions': 'Acciones Rápidas',
@@ -303,15 +299,11 @@ const translations = {
         'manage.your.services': 'Gestionar Tus Servicios',
         'back.to.dashboard': 'Volver al Panel',
         'services.available': 'servicios disponibles',
-        'add.new.service': 'Agregar Nuevo Servicio',
-        'add.first.service': 'Agregar Tu Primer Servicio',
         'edit.service': 'Editar Servicio',
-        'add.new.service': 'Agregar Nuevo Servicio',
         'service.name': 'Nombre del Servicio',
         'description': 'Descripción',
         'duration.minutes': 'Duración (minutos)',
         'price': 'Precio ($)',
-        'category': 'Categoría',
         'image.url.optional': 'URL de Imagen (opcional)',
         'service.active.visible': 'El servicio está activo y visible para los clientes',
         'cancel': 'Cancelar',
@@ -364,7 +356,6 @@ const translations = {
         'yes': 'Sí',
         'no': 'No',
         'confirm': 'Confirmar',
-        'cancel': 'Cancelar',
         'are.you.sure': '¿Estás seguro?',
         'failed.to.load': 'Error al cargar',
         'no.data': 'No hay datos disponibles',
@@ -409,8 +400,6 @@ const translations = {
         'morning': 'Mañana (8AM - 12PM)',
         'afternoon': 'Tarde (12PM - 5PM)',
         'evening': 'Noche (5PM - 9PM)',
-        'back': 'Atrás',
-        'next': 'Siguiente',
         'create.account': 'Crear Cuenta',
         'add.more.info': 'Agregar Más Información',
         'complete.onboarding': 'Completar Registro',

@@ -33,22 +33,22 @@ export default function HeroTitleDemo() {
                         📝 Different Variants
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle variant="h1" data-testid="h1-variant">
                                 H1 - Main Title
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle variant="h2" data-testid="h2-variant">
                                 H2 - Section Title
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle variant="h3" data-testid="h3-variant">
                                 H3 - Subsection
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle variant="h4" data-testid="h4-variant">
                                 H4 - Card Title
                             </HeroTitle>
@@ -62,7 +62,7 @@ export default function HeroTitleDemo() {
                         🌈 Custom Gradients
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 gradientColors={['#FF6B6B', '#4ECDC4']}
                                 data-testid="custom-gradient-1"
@@ -70,7 +70,7 @@ export default function HeroTitleDemo() {
                                 Sunset to Ocean
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 gradientColors={['#A8EDEA', '#FED6E3']}
                                 data-testid="custom-gradient-2"
@@ -78,7 +78,7 @@ export default function HeroTitleDemo() {
                                 Mint to Pink
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 gradientColors={['#FFD89B', '#19547B']}
                                 data-testid="custom-gradient-3"
@@ -86,7 +86,7 @@ export default function HeroTitleDemo() {
                                 Golden to Navy
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 gradientColors={['#667eea', '#764ba2', '#f093fb']}
                                 data-testid="custom-gradient-4"
@@ -116,7 +116,7 @@ export default function HeroTitleDemo() {
                         🎭 Custom Styling
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 sx={{
                                     fontFamily: 'monospace',
@@ -128,7 +128,7 @@ export default function HeroTitleDemo() {
                                 Monospace Style
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <HeroTitle
                                 sx={{
                                     fontStyle: 'italic',
@@ -163,7 +163,7 @@ export default function HeroTitleDemo() {
                         🏷️ Different HTML Components
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <HeroTitle
                                 component="h1"
                                 data-testid="h1-component"
@@ -171,7 +171,7 @@ export default function HeroTitleDemo() {
                                 H1 Element
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <HeroTitle
                                 component="h2"
                                 data-testid="h2-component"
@@ -179,7 +179,7 @@ export default function HeroTitleDemo() {
                                 H2 Element
                             </HeroTitle>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <HeroTitle
                                 component="h3"
                                 data-testid="h3-component"
@@ -253,7 +253,7 @@ export default function HeroTitleDemo() {
                         📚 Props Documentation
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="h6" sx={{ mb: 2, color: '#8B5CF6' }}>
                                 Required Props
                             </Typography>
@@ -261,7 +261,7 @@ export default function HeroTitleDemo() {
                                 <strong>children:</strong> ReactNode - The title text content
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="h6" sx={{ mb: 2, color: '#8B5CF6' }}>
                                 Optional Props
                             </Typography>

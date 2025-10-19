@@ -223,7 +223,7 @@ export default function ServicesPage() {
                 >
                     <Card sx={{ p: 3, mb: 4, borderRadius: 3, boxShadow: 3 }}>
                         <Grid container spacing={3} alignItems="center">
-                            <Grid item xs={12} md={4}>
+                            <Grid size={{ xs: 12, md: 4 }}>
                                 <TextField
                                     fullWidth
                                     placeholder={t('search.services')}
@@ -244,7 +244,7 @@ export default function ServicesPage() {
                                 />
                             </Grid>
 
-                            <Grid item xs={12} md={4}>
+                            <Grid size={{ xs: 12, md: 4 }}>
                                 <FormControl fullWidth>
                                     <InputLabel>{t('category')}</InputLabel>
                                     <Select
@@ -265,7 +265,7 @@ export default function ServicesPage() {
                                 </FormControl>
                             </Grid>
 
-                            <Grid item xs={12} md={4}>
+                            <Grid size={{ xs: 12, md: 4 }}>
                                 <FormControl fullWidth>
                                     <InputLabel>{t('price.range')}</InputLabel>
                                     <Select
@@ -331,7 +331,7 @@ export default function ServicesPage() {
                     <>
                         <Grid container spacing={3}>
                             {getPaginatedServices().map((service, index) => (
-                                <Grid item xs={12} sm={6} md={4} key={service.id}>
+                                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={service.id}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}

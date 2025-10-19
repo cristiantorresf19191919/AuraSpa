@@ -221,7 +221,7 @@ export default function EditPatientClient({ params }: EditPatientClientProps) {
 
     if (error && !patient) {
         return (
-            <RoleGuard requiredRole={UserRole.SURGICAL_TEAM}>
+            <RoleGuard requiredRole={UserRole.MASSAGE_PROVIDER}>
                 <Box sx={{ p: 3 }}>
                     <Alert severity="error" sx={{ mb: 3 }}>
                         {error}
@@ -239,7 +239,7 @@ export default function EditPatientClient({ params }: EditPatientClientProps) {
     }
 
     return (
-        <RoleGuard requiredRole={UserRole.SURGICAL_TEAM}>
+        <RoleGuard requiredRole={UserRole.MASSAGE_PROVIDER}>
             {(loading || fetchingPatient) && (
                 <BrandLoader
                     fullScreen

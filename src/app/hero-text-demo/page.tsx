@@ -24,7 +24,7 @@ export default function HeroTextDemo() {
                         📏 Size Variants
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Small Text
@@ -37,7 +37,7 @@ export default function HeroTextDemo() {
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Medium Text
@@ -50,7 +50,7 @@ export default function HeroTextDemo() {
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Large Text
@@ -72,7 +72,7 @@ export default function HeroTextDemo() {
                         🌈 Gradient Text Examples
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Small Gradient
@@ -87,7 +87,7 @@ export default function HeroTextDemo() {
                                 </HeroText>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Large Gradient
@@ -164,7 +164,7 @@ export default function HeroTextDemo() {
                         🎭 Custom Styling
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Custom Alignment & Spacing
@@ -183,7 +183,7 @@ export default function HeroTextDemo() {
                                 </HeroText>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Custom Typography
@@ -211,7 +211,7 @@ export default function HeroTextDemo() {
                         📱 Non-Responsive Examples
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Fixed Small Size
@@ -226,7 +226,7 @@ export default function HeroTextDemo() {
                                 </HeroText>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Fixed Medium Size
@@ -241,7 +241,7 @@ export default function HeroTextDemo() {
                                 </HeroText>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}>
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                                     Fixed Large Size
@@ -324,7 +324,7 @@ export default function HeroTextDemo() {
                         📚 Props Documentation
                     </Typography>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="h6" sx={{ mb: 2, color: '#8B5CF6' }}>
                                 Required Props
                             </Typography>
@@ -332,7 +332,7 @@ export default function HeroTextDemo() {
                                 <strong>children:</strong> ReactNode - The text content
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="h6" sx={{ mb: 2, color: '#8B5CF6' }}>
                                 Optional Props
                             </Typography>

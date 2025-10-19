@@ -38,7 +38,8 @@ export default function RoleGuard({
 
         const roleHierarchy: Record<UserRole, number> = {
             [UserRole.GUEST]: 0,
-            [UserRole.SURGICAL_TEAM]: 1,
+            [UserRole.MASSAGE_PROVIDER]: 1,
+            [UserRole.CUSTOMER]: 1,
             [UserRole.ADMIN]: 2
         };
 

@@ -69,7 +69,7 @@ export default function FloatingChat() {
                     ? { ...msg, text: 'Hello Admin! I\'m your AI assistant. I can help you with healthcare questions, surgery information, and patient status lookups. As an administrator, you can search by patient names or codes and get direct results. How can I help you today?' }
                     : msg
             ));
-        } else if (userRole === UserRole.SURGICAL_TEAM) {
+        } else if (userRole === UserRole.MASSAGE_PROVIDER) {
             setMessages(prev => prev.map(msg =>
                 msg.id === '1'
                     ? { ...msg, text: 'Hello Surgical Team! I\'m your AI assistant. I can help you with healthcare questions, surgery information, and patient status lookups. For privacy, I can only search by patient codes (6-character format like ABC123). How can I help you today?' }

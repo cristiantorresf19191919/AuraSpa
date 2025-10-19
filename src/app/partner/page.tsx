@@ -148,7 +148,7 @@ const fadeInUpVariants = {
         scale: 1,
         transition: {
             duration: 0.8,
-            ease: "easeOut",
+            ease: "easeOut" as const,
             staggerChildren: 0.15
         }
     }
@@ -192,7 +192,7 @@ const iconVariants = {
         rotate: 0,
         transition: {
             duration: 0.6,
-            ease: "backOut"
+            ease: "backOut" as const
         }
     }
 };
@@ -207,7 +207,7 @@ const textVariants = {
         x: 0,
         transition: {
             duration: 0.6,
-            ease: "easeOut"
+            ease: "easeOut" as const
         }
     }
 };
@@ -222,7 +222,7 @@ const buttonVariants = {
         scale: 1,
         transition: {
             duration: 0.5,
-            ease: "backOut"
+            ease: "backOut" as const
         }
     },
     hover: {
@@ -396,7 +396,7 @@ export default function PartnerPage() {
                                 { icon: BusinessIcon, ...t.benefits.freedom },
                                 { icon: TrendingUpIcon, ...t.benefits.tools }
                             ].map((benefit, index) => (
-                                <Grid item xs={12} md={4} key={index}>
+                                <Grid size={{ xs: 12, md: 4 }} key={index}>
                                     <ScrollAnimatedSection variants={cardVariants}>
                                         <motion.div
                                             whileHover={{
@@ -500,7 +500,7 @@ export default function PartnerPage() {
                                 { icon: '2️⃣', ...t.steps.step2 },
                                 { icon: '3️⃣', ...t.steps.step3 }
                             ].map((step, index) => (
-                                <Grid item xs={12} md={4} key={index}>
+                                <Grid size={{ xs: 12, md: 4 }} key={index}>
                                     <ScrollAnimatedSection variants={cardVariants}>
                                         <motion.div
                                             whileHover={{

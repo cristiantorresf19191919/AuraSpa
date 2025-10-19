@@ -235,7 +235,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuPr
                                         </Box>
                                     </Box>
                                     <Chip
-                                        label={userRole === UserRole.ADMIN ? 'Administrator' : userRole === UserRole.SURGICAL_TEAM ? 'Surgical Team' : 'Guest'}
+                                        label={userRole === UserRole.ADMIN ? 'Administrator' : userRole === UserRole.MASSAGE_PROVIDER ? 'Massage Provider' : 'Guest'}
                                         size="small"
                                         sx={{
                                             bgcolor: 'rgba(255, 255, 255, 0.2)',
@@ -254,7 +254,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuPr
                             {menuItems.map((item, index) => {
                                 // Check if item should be shown based on user role
                                 if (item.adminOnly && userRole !== UserRole.ADMIN) return null;
-                                if (item.surgicalTeamOnly && !(userRole === UserRole.ADMIN || userRole === UserRole.SURGICAL_TEAM)) return null;
+                                if (item.surgicalTeamOnly && !(userRole === UserRole.ADMIN || userRole === UserRole.MASSAGE_PROVIDER)) return null;
                                 if (!user && (item.adminOnly || item.surgicalTeamOnly)) return null;
 
                                 return (

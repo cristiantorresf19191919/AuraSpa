@@ -131,7 +131,7 @@ export default function OnboardingStep2({
 
                 {/* Professional Information */}
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <TextField
                             fullWidth
                             label={t('professional.title')}
@@ -153,7 +153,7 @@ export default function OnboardingStep2({
                         />
                     </Grid>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <TextField
                             fullWidth
                             label={t('about.me')}
@@ -177,7 +177,7 @@ export default function OnboardingStep2({
                         />
                     </Grid>
 
-                    <Grid item xs={12}>
+                    <Grid size={{ xs: 12 }}>
                         <FormControl fullWidth error={!!errors.servicesOffered}>
                             <InputLabel sx={{ color: 'rgba(255, 255, 255, 0.9)', fontWeight: 600 }}>
                                 {t('services.offered')}
@@ -221,8 +221,8 @@ export default function OnboardingStep2({
                                 }}
                             >
                                 {MASSAGE_CATEGORIES.map((category) => (
-                                    <MenuItem key={category} value={category}>
-                                        {t(`massage.${category}`)}
+                                    <MenuItem key={category.value} value={category.value}>
+                                        {t(`massage.${category.value}`)}
                                     </MenuItem>
                                 ))}
                             </Select>

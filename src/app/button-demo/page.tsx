@@ -49,13 +49,13 @@ export default function ButtonDemoPage() {
                         Multiple Buttons with Staggering Animation
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <BrandButton delay={0.1}>
+                        <BrandButton>
                             Get Started
                         </BrandButton>
-                        <BrandButton delay={0.2}>
+                        <BrandButton>
                             Learn More
                         </BrandButton>
-                        <BrandButton delay={0.3}>
+                        <BrandButton>
                             Contact Us
                         </BrandButton>
                     </Box>

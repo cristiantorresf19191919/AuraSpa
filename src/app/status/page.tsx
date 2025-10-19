@@ -112,7 +112,7 @@ export default function StatusPage() {
 
     // Check user role using the enum
     const isAdmin = userRole === UserRole.ADMIN;
-    const isSurgicalTeam = userRole === UserRole.SURGICAL_TEAM;
+    const isSurgicalTeam = userRole === UserRole.MASSAGE_PROVIDER;
     const isAuthenticated = isAdmin || isSurgicalTeam;
     const isGuest = userRole === UserRole.GUEST;
 

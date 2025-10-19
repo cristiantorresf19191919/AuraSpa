@@ -250,7 +250,7 @@ export default function ManageServicesPage() {
                     ) : (
                         <Grid container spacing={3}>
                             {services.map((service, index) => (
-                                <Grid item xs={12} sm={6} md={4} key={service.id}>
+                                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={service.id}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -328,7 +328,7 @@ export default function ManageServicesPage() {
                             )}
 
                             <Grid container spacing={2}>
-                                <Grid item xs={12}>
+                                <Grid size={{ xs: 12 }}>
                                     <TextField
                                         fullWidth
                                         label="Service Name"
@@ -340,7 +340,7 @@ export default function ManageServicesPage() {
                                     />
                                 </Grid>
 
-                                <Grid item xs={12}>
+                                <Grid size={{ xs: 12 }}>
                                     <TextField
                                         fullWidth
                                         label="Description"
@@ -354,7 +354,7 @@ export default function ManageServicesPage() {
                                     />
                                 </Grid>
 
-                                <Grid item xs={6}>
+                                <Grid size={{ xs: 6 }}>
                                     <TextField
                                         fullWidth
                                         label="Duration (minutes)"
@@ -367,7 +367,7 @@ export default function ManageServicesPage() {
                                     />
                                 </Grid>
 
-                                <Grid item xs={6}>
+                                <Grid size={{ xs: 6 }}>
                                     <TextField
                                         fullWidth
                                         label="Price ($)"
@@ -380,7 +380,7 @@ export default function ManageServicesPage() {
                                     />
                                 </Grid>
 
-                                <Grid item xs={12}>
+                                <Grid size={{ xs: 12 }}>
                                     <FormControl fullWidth required>
                                         <InputLabel>Category</InputLabel>
                                         <Select
@@ -398,7 +398,7 @@ export default function ManageServicesPage() {
                                     </FormControl>
                                 </Grid>
 
-                                <Grid item xs={12}>
+                                <Grid size={{ xs: 12 }}>
                                     <TextField
                                         fullWidth
                                         label="Image URL (optional)"
@@ -408,7 +408,7 @@ export default function ManageServicesPage() {
                                     />
                                 </Grid>
 
-                                <Grid item xs={12}>
+                                <Grid size={{ xs: 12 }}>
                                     <FormControlLabel
                                         control={
                                             <Switch

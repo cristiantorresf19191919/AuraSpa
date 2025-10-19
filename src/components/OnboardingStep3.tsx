@@ -75,7 +75,7 @@ export default function OnboardingStep3({
 
             <Grid container spacing={2}>
                 {/* Location Information */}
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                     <StyledTextField
                         fullWidth
                         label={t('primary.service.city')}
@@ -87,7 +87,7 @@ export default function OnboardingStep3({
                     />
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                     <StyledTextField
                         fullWidth
                         label={t('service.areas')}
@@ -100,13 +100,13 @@ export default function OnboardingStep3({
                 </Grid>
 
                 {/* Pricing Section */}
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                     <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                         {t('pricing.for.services')}
                     </Typography>
                     <Grid container spacing={2}>
                         {formData.servicesOffered?.map((service) => (
-                            <Grid item xs={12} md={6} key={service}>
+                            <Grid size={{ xs: 12, md: 6 }} key={service}>
                                 <StyledTextField
                                     fullWidth
                                     label={`${t(`massage.${service}`)} - ${t('price')}`}
@@ -131,13 +131,13 @@ export default function OnboardingStep3({
                 </Grid>
 
                 {/* Availability Section */}
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                     <Typography variant="h6" sx={{ mb: 2, color: 'white', fontWeight: 600 }}>
                         {t('availability')}
                     </Typography>
                     <Grid container spacing={2}>
                         {DAYS_OF_WEEK.map((day) => (
-                            <Grid item xs={12} md={6} key={day}>
+                            <Grid size={{ xs: 12, md: 6 }} key={day}>
                                 <Box sx={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.06)',
                                     backdropFilter: 'blur(15px)',
@@ -153,7 +153,7 @@ export default function OnboardingStep3({
                                             <input
                                                 type="checkbox"
                                                 id={`${day}-${timeSlot}`}
-                                                checked={formData.availability[day]?.[timeSlot] || false}
+                                                checked={formData.availability[day]?.[timeSlot as keyof typeof formData.availability[typeof day]] || false}
                                                 onChange={(e) => handleAvailabilityChange(day, timeSlot, e.target.checked)}
                                                 style={{ marginRight: '8px' }}
                                             />
