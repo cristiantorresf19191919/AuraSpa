@@ -737,7 +737,7 @@ export default function Header() {
                                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                                         <Button
                                             component={Link}
-                                            href="/auth"
+                                            href="/authentication"
                                             variant="outlined"
                                             data-testid="sign-in-button"
                                             sx={{

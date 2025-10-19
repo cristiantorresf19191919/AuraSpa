@@ -2,6 +2,8 @@ import type { NextRequest } from "next/server";
 import { auth0 } from "./src/app/lib/auth0";
 
 export async function middleware(request: NextRequest) {
+  console.log('Middleware called');
+  console.log('Request:', request);
   return await auth0.middleware(request);
 }
 

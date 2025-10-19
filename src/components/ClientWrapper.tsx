@@ -13,10 +13,21 @@ export default function ClientWrapper({ children }: ClientWrapperProps) {
         setMounted(true);
     }, []);
 
-    // Render children immediately, but with a key to force re-render after mount
+    // Always render the same structure to prevent hydration mismatch
+    // Use suppressHydrationWarning to prevent React warnings
     return (
-        <div key={mounted ? 'mounted' : 'loading'}>
-            {children}
+        <div suppressHydrationWarning>
+            {mounted ? children : (
+                <div className="min-h-screen flex flex-col">
+                    <div className="h-16 bg-transparent" />
+                    <main className="flex-1 main-background">
+                        <div className="flex items-center justify-center min-h-screen">
+                            <div className="animate-pulse text-white">Loading...</div>
+                        </div>
+                    </main>
+                    <div className="h-16 bg-transparent" />
+                </div>
+            )}
         </div>
     );
 } 

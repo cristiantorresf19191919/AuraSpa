@@ -85,7 +85,7 @@ export default function NoSession() {
                 </Typography>
                 <Button
                   variant="contained"
-                  href="/api/auth/login"
+                  href="/auth"
                   sx={{
                     background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
                     color: 'white',
@@ -136,7 +136,7 @@ export default function NoSession() {
                 </Typography>
                 <Button
                   variant="contained"
-                  href="/api/auth/login?screen_hint=signup"
+                  href="/auth"
                   sx={{
                     background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
                     color: 'white',
