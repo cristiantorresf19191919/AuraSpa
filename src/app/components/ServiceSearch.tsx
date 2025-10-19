@@ -416,7 +416,7 @@ export default function ServiceSearch() {
           </Typography>
           <Button
             variant="contained"
-            href="/authentication"
+            href="/auth/login"
             sx={{
               background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
               color: 'white',

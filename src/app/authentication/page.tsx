@@ -27,14 +27,14 @@ export default function AuthPage() {
       setLoading(true);
       setError('');
       // Redirect to Auth0 login
-      window.location.href = '/api/auth/login';
+      window.location.href = '/auth/login';
   };
 
   const handleAuth0Signup = () => {
     setLoading(true);
     setError('');
     // Redirect to Auth0 signup
-    window.location.href = '/api/auth/login?screen_hint=signup';
+    window.location.href = '/auth/login?screen_hint=signup';
   };
 
   return (
@@ -233,7 +233,6 @@ export default function AuthPage() {
                     >
                       {loading ? 'Redirecting...' : 'Sign In with Auth0'}
                     </Button>
-                    <a href="/auth/login">Log in</a>
                   </Box>
                 </BeautifulCard>
               </motion.div>

@@ -5,7 +5,6 @@ import { Auth0Provider } from '@auth0/nextjs-auth0';
 import { AuthProvider } from "@/lib/auth-context";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { LanguageProvider } from "@/lib/language-context";
-import ClientWrapper from "@/components/ClientWrapper";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingChat from "@/components/FloatingChat";
@@ -46,16 +45,14 @@ export default function RootLayout({
           <ThemeProvider>
             <LanguageProvider>
               <AuthProvider>
-                <ClientWrapper>
-                  <div className="min-h-screen flex flex-col">
-                    <Header />
-                    <main className="flex-1 main-background">
-                      {children}
-                    </main>
-                    <FloatingChat />
-                    <Footer />
-                  </div>
-                </ClientWrapper>
+                <div className="min-h-screen flex flex-col">
+                  <Header />
+                  <main className="flex-1 main-background">
+                    {children}
+                  </main>
+                  <FloatingChat />
+                  <Footer />
+                </div>
               </AuthProvider>
             </LanguageProvider>
           </ThemeProvider>
