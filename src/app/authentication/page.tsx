@@ -203,36 +203,37 @@ export default function AuthPage() {
                       Access your account and continue your wellness journey with secure authentication
                     </Typography>
 
-                    <Button
-                      variant="contained"
-                      onClick={handleAuth0Login}
-                      disabled={loading}
-                      sx={{
-                        background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
-                        color: 'white',
-                        px: 4,
-                        py: 2,
-                        borderRadius: 3,
-                        fontWeight: 600,
-                        textTransform: 'none',
-                        fontSize: '1.1rem',
-                        width: '100%',
-                        minHeight: '56px',
-                        '&:hover': {
-                          background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
-                          transform: 'translateY(-2px)',
-                          boxShadow: '0 12px 30px rgba(139, 92, 246, 0.5)'
-                        },
-                        '&:disabled': {
-                          background: 'rgba(139, 92, 246, 0.5)',
-                          color: 'rgba(255, 255, 255, 0.7)'
-                        },
-                        transition: 'all 0.3s ease'
-                      }}
-                      startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <LoginIcon />}
-                    >
-                      {loading ? 'Redirecting...' : 'Sign In with Auth0'}
-                    </Button>
+                    <a href="/auth/login" style={{ textDecoration: 'none', width: '100%', display: 'block' }}>
+                      <Button
+                        variant="contained"
+                        disabled={loading}
+                        sx={{
+                          background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
+                          color: 'white',
+                          px: 4,
+                          py: 2,
+                          borderRadius: 3,
+                          fontWeight: 600,
+                          textTransform: 'none',
+                          fontSize: '1.1rem',
+                          width: '100%',
+                          minHeight: '56px',
+                          '&:hover': {
+                            background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+                            transform: 'translateY(-2px)',
+                            boxShadow: '0 12px 30px rgba(139, 92, 246, 0.5)'
+                          },
+                          '&:disabled': {
+                            background: 'rgba(139, 92, 246, 0.5)',
+                            color: 'rgba(255, 255, 255, 0.7)'
+                          },
+                          transition: 'all 0.3s ease'
+                        }}
+                        startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <LoginIcon />}
+                      >
+                        {loading ? 'Redirecting...' : 'Sign In with Auth0'}
+                      </Button>
+                    </a>
                   </Box>
                 </BeautifulCard>
               </motion.div>
@@ -291,36 +292,37 @@ export default function AuthPage() {
                       Create a new account and start your wellness journey today with our premium services
                     </Typography>
 
-                    <Button
-                      variant="contained"
-                      onClick={handleAuth0Signup}
-                      disabled={loading}
-                      sx={{
-                        background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-                        color: 'white',
-                        px: 4,
-                        py: 2,
-                        borderRadius: 3,
-                        fontWeight: 600,
-                        textTransform: 'none',
-                        fontSize: '1.1rem',
-                        width: '100%',
-                        minHeight: '56px',
-                        '&:hover': {
-                          background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
-                          transform: 'translateY(-2px)',
-                          boxShadow: '0 12px 30px rgba(16, 185, 129, 0.5)'
-                        },
-                        '&:disabled': {
-                          background: 'rgba(16, 185, 129, 0.5)',
-                          color: 'rgba(255, 255, 255, 0.7)'
-                        },
-                        transition: 'all 0.3s ease'
-                      }}
-                      startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <PersonAddIcon />}
-                    >
-                      {loading ? 'Redirecting...' : 'Sign Up with Auth0'}
-                    </Button>
+                    <a href="/auth/login?screen_hint=signup" style={{ textDecoration: 'none', width: '100%', display: 'block' }}>
+                      <Button
+                        variant="contained"
+                        disabled={loading}
+                        sx={{
+                          background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                          color: 'white',
+                          px: 4,
+                          py: 2,
+                          borderRadius: 3,
+                          fontWeight: 600,
+                          textTransform: 'none',
+                          fontSize: '1.1rem',
+                          width: '100%',
+                          minHeight: '56px',
+                          '&:hover': {
+                            background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+                            transform: 'translateY(-2px)',
+                            boxShadow: '0 12px 30px rgba(16, 185, 129, 0.5)'
+                          },
+                          '&:disabled': {
+                            background: 'rgba(16, 185, 129, 0.5)',
+                            color: 'rgba(255, 255, 255, 0.7)'
+                          },
+                          transition: 'all 0.3s ease'
+                        }}
+                        startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <PersonAddIcon />}
+                      >
+                        {loading ? 'Redirecting...' : 'Sign Up with Auth0'}
+                      </Button>
+                    </a>
                   </Box>
                 </BeautifulCard>
               </motion.div>

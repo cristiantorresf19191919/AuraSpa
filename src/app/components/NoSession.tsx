@@ -83,29 +83,30 @@ export default function NoSession() {
                 <Typography variant="body1" sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.8)' }}>
                   Access your account and continue your wellness journey
                 </Typography>
-                <Button
-                  variant="contained"
-                  href="/auth/login"
-                  sx={{
-                    background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
-                    color: 'white',
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    fontWeight: 600,
-                    textTransform: 'none',
-                    fontSize: '1.1rem',
-                    width: '100%',
-                    '&:hover': {
-                      background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 25px rgba(139, 92, 246, 0.4)'
-                    },
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  Sign In
-                </Button>
+                <a href="/auth/login" style={{ textDecoration: 'none', width: '100%', display: 'block' }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
+                      color: 'white',
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: 3,
+                      fontWeight: 600,
+                      textTransform: 'none',
+                      fontSize: '1.1rem',
+                      width: '100%',
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 25px rgba(139, 92, 246, 0.4)'
+                      },
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </a>
               </Box>
             </BeautifulCard>
           </Grid>
@@ -134,29 +135,30 @@ export default function NoSession() {
                 <Typography variant="body1" sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.8)' }}>
                   Create a new account and start your wellness journey today
                 </Typography>
-                <Button
-                  variant="contained"
-                  href="/auth/login?screen_hint=signup"
-                  sx={{
-                    background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-                    color: 'white',
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    fontWeight: 600,
-                    textTransform: 'none',
-                    fontSize: '1.1rem',
-                    width: '100%',
-                    '&:hover': {
-                      background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 25px rgba(16, 185, 129, 0.4)'
-                    },
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  Sign Up
-                </Button>
+                <a href="/auth/login?screen_hint=signup" style={{ textDecoration: 'none', width: '100%', display: 'block' }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                      color: 'white',
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: 3,
+                      fontWeight: 600,
+                      textTransform: 'none',
+                      fontSize: '1.1rem',
+                      width: '100%',
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 25px rgba(16, 185, 129, 0.4)'
+                      },
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    Sign Up
+                  </Button>
+                </a>
               </Box>
             </BeautifulCard>
           </Grid>

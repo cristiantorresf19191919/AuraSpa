@@ -414,28 +414,29 @@ export default function ServiceSearch() {
           <Typography variant="h5" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.9)', fontWeight: 600 }}>
             Ready to book your wellness experience?
           </Typography>
-          <Button
-            variant="contained"
-            href="/auth/login"
-            sx={{
-              background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
-              color: 'white',
-              px: 6,
-              py: 2,
-              borderRadius: 3,
-              fontWeight: 600,
-              textTransform: 'none',
-              fontSize: '1.2rem',
-              '&:hover': {
-                background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 12px 30px rgba(139, 92, 246, 0.5)'
-              },
-              transition: 'all 0.3s ease'
-            }}
-          >
-            Sign In to Book
-          </Button>
+          <a href="/auth/login" style={{ textDecoration: 'none', display: 'inline-block' }}>
+            <Button
+              variant="contained"
+              sx={{
+                background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
+                color: 'white',
+                px: 6,
+                py: 2,
+                borderRadius: 3,
+                fontWeight: 600,
+                textTransform: 'none',
+                fontSize: '1.2rem',
+                '&:hover': {
+                  background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 12px 30px rgba(139, 92, 246, 0.5)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              Sign In to Book
+            </Button>
+          </a>
         </motion.div>
       </Box>
     </Box>
