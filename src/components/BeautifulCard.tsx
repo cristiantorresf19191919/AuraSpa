@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { Box } from '@mui/material';
 
 interface BeautifulCardProps {
@@ -16,6 +16,20 @@ export default function BeautifulCard({
     className = '',
     sx = {}
 }: BeautifulCardProps) {
+    // Inject styles into the document head only on client side
+    useEffect(() => {
+        const styleElement = document.createElement('style');
+        styleElement.textContent = styles;
+        document.head.appendChild(styleElement);
+        
+        // Cleanup function to remove styles when component unmounts
+        return () => {
+            if (document.head.contains(styleElement)) {
+                document.head.removeChild(styleElement);
+            }
+        };
+    }, []);
+
     return (
         <Box
             className={`beautiful-card ${className}`}
@@ -163,10 +177,3 @@ const styles = `
         }
     }
 `;
-
-// Inject styles into the document head
-if (typeof document !== 'undefined') {
-    const styleElement = document.createElement('style');
-    styleElement.textContent = styles;
-    document.head.appendChild(styleElement);
-}

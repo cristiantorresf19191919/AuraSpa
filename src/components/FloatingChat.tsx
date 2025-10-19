@@ -48,7 +48,7 @@ export default function FloatingChat() {
             id: '1',
             text: 'Hello! I\'m your AI assistant. I can help you with healthcare questions, surgery information, and patient status lookups. For privacy, I can only search by patient codes (6-character format like ABC123). How can I help you today?',
             sender: 'ai',
-            timestamp: new Date()
+            timestamp: new Date('2024-01-01T00:00:00Z') // Static timestamp to prevent hydration mismatch
         }
     ]);
     const [inputMessage, setInputMessage] = useState('');

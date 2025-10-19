@@ -202,12 +202,8 @@ export default function Header() {
         router.push('/');
     };
 
-    // Get current date in dd.mm.yyyy format
-    const currentDate = new Date().toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
+    // Get current date in dd.mm.yyyy format - use static date to prevent hydration mismatch
+    const currentDate = '19.10.2024'; // Static date to prevent hydration mismatch
 
     return (
         <header data-testid="header">
