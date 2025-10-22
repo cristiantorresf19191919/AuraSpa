@@ -1,14 +1,14 @@
 import { auth0 } from "@/app/lib/auth0";
 import UserProfile from "./components/UserProfile";
-import ServiceSearch from "./components/ServiceSearch";
+import ServiceSearchEnhanced from "./components/ServiceSearchEnhanced";
 
 export default async function Home() {
   // Fetch the user session
   const session = await auth0.getSession();
 
-  // If no session, show service search page
+  // If no session, show enhanced service search page
   if (!session) {
-    return <ServiceSearch />;
+    return <ServiceSearchEnhanced />;
   }
 
   // If session exists, show the beautiful user profile component

@@ -59,11 +59,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-
-
   const logout = async () => {
     try {
+      console.log('Logging out user...');
+      
+      // Clear local state immediately
+      setUser(null);
+      setUserRole(UserRole.GUEST);
+      setUserInfo(null);
+      
+      // Sign out from Firebase
       await signOut(auth);
+      
+      console.log('User logged out successfully');
+      
+      // Redirect to home page after logout
+      window.location.href = '/';
+      
     } catch (error: any) {
       console.error('Logout error:', error);
       throw error;
