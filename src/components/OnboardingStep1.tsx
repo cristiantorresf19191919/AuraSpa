@@ -88,7 +88,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                     }}>
                         <TextField
                             fullWidth
-                            label={t('full.name')}
                             placeholder={t('placeholder.full.name')}
                             value={formData.fullName}
                             onChange={(e) => handleChange('fullName', e.target.value)}
@@ -113,11 +112,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                                         boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
                                     }
                                 },
-                                '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    fontWeight: 500,
-                                    '&.Mui-focused': { color: '#8B5CF6' }
-                                },
                                 '& .MuiFormHelperText-root': {
                                     color: errors.fullName ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
                                     fontWeight: 400,
@@ -128,7 +122,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
 
                         <TextField
                             fullWidth
-                            label={t('email')}
                             placeholder={t('placeholder.email')}
                             type="email"
                             value={formData.email}
@@ -154,11 +147,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                                         boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
                                     }
                                 },
-                                '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    fontWeight: 500,
-                                    '&.Mui-focused': { color: '#8B5CF6' }
-                                },
                                 '& .MuiFormHelperText-root': {
                                     color: errors.email ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
                                     fontWeight: 400,
@@ -169,7 +157,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
 
                         <TextField
                             fullWidth
-                            label={t('phone')}
                             placeholder={t('placeholder.phone')}
                             value={formData.phone}
                             onChange={(e) => handleChange('phone', e.target.value)}
@@ -193,11 +180,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                                         borderWidth: '2px',
                                         boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
                                     }
-                                },
-                                '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    fontWeight: 500,
-                                    '&.Mui-focused': { color: '#8B5CF6' }
                                 },
                                 '& .MuiFormHelperText-root': {
                                     color: errors.phone ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
@@ -240,7 +222,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                     }}>
                         <TextField
                             fullWidth
-                            label={t('password')}
                             placeholder={t('placeholder.password')}
                             type="password"
                             value={formData.password}
@@ -266,11 +247,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                                         boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
                                     }
                                 },
-                                '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    fontWeight: 500,
-                                    '&.Mui-focused': { color: '#8B5CF6' }
-                                },
                                 '& .MuiFormHelperText-root': {
                                     color: errors.password ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
                                     fontWeight: 400,
@@ -281,7 +257,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
 
                         <TextField
                             fullWidth
-                            label={t('confirm.password')}
                             placeholder={t('placeholder.confirm.password')}
                             type="password"
                             value={formData.confirmPassword}
@@ -306,11 +281,6 @@ const OnboardingStep1 = memo(function OnboardingStep1({
                                         borderWidth: '2px',
                                         boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
                                     }
-                                },
-                                '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    fontWeight: 500,
-                                    '&.Mui-focused': { color: '#8B5CF6' }
                                 },
                                 '& .MuiFormHelperText-root': {
                                     color: errors.confirmPassword ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',

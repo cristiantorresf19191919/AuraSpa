@@ -134,21 +134,35 @@ export default function OnboardingStep2({
                     <Grid size={{ xs: 12, md: 6 }}>
                         <TextField
                             fullWidth
-                            label={t('professional.title')}
+                            placeholder={t('placeholder.professional.title')}
                             value={formData.professionalTitle}
                             onChange={(e) => handleChange('professionalTitle', e.target.value)}
                             error={!!errors.professionalTitle}
                             helperText={errors.professionalTitle}
-                            placeholder={t('placeholder.professional.title')}
                             sx={{
                                 '& .MuiOutlinedInput-root': {
                                     color: 'white',
-                                    '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.3)' },
-                                    '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.5)' },
-                                    '&.Mui-focused fieldset': { borderColor: '#8B5CF6' }
+                                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                                    borderRadius: '12px',
+                                    '& fieldset': { 
+                                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                                        borderWidth: '1px'
+                                    },
+                                    '&:hover fieldset': { 
+                                        borderColor: 'rgba(255, 255, 255, 0.4)',
+                                        borderWidth: '1px'
+                                    },
+                                    '&.Mui-focused fieldset': { 
+                                        borderColor: '#8B5CF6',
+                                        borderWidth: '2px',
+                                        boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
+                                    }
                                 },
-                                '& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.8)' },
-                                '& .MuiFormHelperText-root': { color: 'rgba(255, 255, 255, 0.7)' }
+                                '& .MuiFormHelperText-root': { 
+                                    color: errors.professionalTitle ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
+                                    fontWeight: 400,
+                                    fontSize: '0.875rem'
+                                }
                             }}
                         />
                     </Grid>
@@ -156,23 +170,37 @@ export default function OnboardingStep2({
                     <Grid size={{ xs: 12, md: 6 }}>
                         <TextField
                             fullWidth
-                            label={t('about.me')}
+                            placeholder={t('placeholder.about.me')}
                             value={formData.aboutMe}
                             onChange={(e) => handleChange('aboutMe', e.target.value)}
                             error={!!errors.aboutMe}
                             helperText={errors.aboutMe}
-                            placeholder={t('placeholder.about.me')}
                             multiline
                             rows={4}
                             sx={{
                                 '& .MuiOutlinedInput-root': {
                                     color: 'white',
-                                    '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.3)' },
-                                    '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.5)' },
-                                    '&.Mui-focused fieldset': { borderColor: '#8B5CF6' }
+                                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                                    borderRadius: '12px',
+                                    '& fieldset': { 
+                                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                                        borderWidth: '1px'
+                                    },
+                                    '&:hover fieldset': { 
+                                        borderColor: 'rgba(255, 255, 255, 0.4)',
+                                        borderWidth: '1px'
+                                    },
+                                    '&.Mui-focused fieldset': { 
+                                        borderColor: '#8B5CF6',
+                                        borderWidth: '2px',
+                                        boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)'
+                                    }
                                 },
-                                '& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.8)' },
-                                '& .MuiFormHelperText-root': { color: 'rgba(255, 255, 255, 0.7)' }
+                                '& .MuiFormHelperText-root': { 
+                                    color: errors.aboutMe ? '#ef4444' : 'rgba(255, 255, 255, 0.7)',
+                                    fontWeight: 400,
+                                    fontSize: '0.875rem'
+                                }
                             }}
                         />
                     </Grid>

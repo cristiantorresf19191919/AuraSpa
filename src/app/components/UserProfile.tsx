@@ -89,29 +89,39 @@ export default function UserProfile() {
             </Card>
 
             <Box sx={{ textAlign: 'center' }}>
-              <Button
-                variant="contained"
-                startIcon={<Logout />}
+              <a
                 href="/api/auth/logout"
-                sx={{
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
                   background: 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)',
                   color: 'white',
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: 3,
+                  padding: '12px 32px',
+                  borderRadius: '24px',
                   fontWeight: 600,
                   textTransform: 'none',
                   fontSize: '1.1rem',
-                  '&:hover': {
-                    background: 'linear-gradient(135deg, #DC2626 0%, #B91C1C 100%)',
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 8px 25px rgba(239, 68, 68, 0.4)'
-                  },
-                  transition: 'all 0.3s ease'
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  border: 'none',
+                  outline: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #DC2626 0%, #B91C1C 100%)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(239, 68, 68, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
+                <Logout sx={{ fontSize: '1.2rem' }} />
                 Logout
-              </Button>
+              </a>
             </Box>
           </BeautifulCard>
         </Grid>
